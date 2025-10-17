@@ -42,7 +42,7 @@ int main() {
 
     cout << "Слова, оканчивающиеся на b: ";
     for (int i = 0; i < wordc; i++) {
-        int len = strlen(words[i]); // strlen() из теории
+        int len = strlen(words[i]); 
         if (words[i][len - 1] == 'b') {
             cout << words[i] << " ";
         }
@@ -82,10 +82,10 @@ int main() {
 
     for (int i = 0; text[i] != '\0'; i++) {
         if (text[i] >= 'a' && text[i] <= 'z') { 
-            cout << (char)(text[i] - 32); // 
+            cout << (char)(text[i] - 32); 
         }
         else {
-            cout << text[i]; // остальные символы без изменений
+            cout << text[i]; 
         }
     }
     cout << endl;
