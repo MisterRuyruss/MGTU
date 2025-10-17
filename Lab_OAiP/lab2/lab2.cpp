@@ -21,20 +21,20 @@ int main() {
     char* ptr = text;
     int ind = 0;
 
-    while (*ptr != '\0') { // символ NULL
+    while (*ptr != '\0') { 
         if (*ptr != ' ') {
             words[wordc][ind] = *ptr;
             ind++;
         }
         else {
-            words[wordc][ind] = '\0'; // добавляем NULL
+            words[wordc][ind] = '\0'; 
             wordc++;
             ind = 0;
         }
-        ptr++; // перемещаем указатель
+        ptr++; 
     }
 
-    // последнее слово
+    
     if (ind > 0) {
         words[wordc][ind] = '\0';
         wordc++;
@@ -42,7 +42,7 @@ int main() {
 
     cout << "Слова, оканчивающиеся на b: ";
     for (int i = 0; i < wordc; i++) {
-        int len = strlen(words[i]); // strlen() из теории
+        int len = strlen(words[i]); 
         if (words[i][len - 1] == 'b') {
             cout << words[i] << " ";
         }
@@ -50,18 +50,17 @@ int main() {
     cout << endl;
     // Самое длинное слово и его длина
     char maword[50]; 
-    strcpy_s(maword, words[0]); // копируем
-    size_t madlina = strlen(maword); 
+    strcpy_s(maword, words[0]); 
+    int madlina = strlen(maword); 
 
     for (int i = 0; i < wordc; i++) { 
         if (strlen(words[i]) > madlina) { 
             madlina = strlen(words[i]);
-            strcpy_s(maword, words[i]); // копируем
+            strcpy_s(maword, words[i]); 
         }
     }
 
-    cout << "Самое длинное слово: " << maword
-        << ", его длина: " << madlina << endl;
+    cout << "Самое длинное слово: " << maword << ", его длина: " << madlina << endl;
 
     // Подсчет количества букв d в последнем слове
     if (wordc > 0) {
@@ -82,10 +81,10 @@ int main() {
 
     for (int i = 0; text[i] != '\0'; i++) {
         if (text[i] >= 'a' && text[i] <= 'z') { 
-            cout << (char)(text[i] - 32); // 
+            cout << (char)(text[i] - 32); 
         }
         else {
-            cout << text[i]; // остальные символы без изменений
+            cout << text[i]; 
         }
     }
     cout << endl;
@@ -95,17 +94,18 @@ int main() {
     int coun = 0;
     for (int i = 0; i < wordc; i++) {
         int len = strlen(words[i]);
-        if (len >= 4) { // нужно минимум 4 символа чтобы был второй и предпоследний
-            if (words[i][1] == words[i][len - 2]) { // сравниваем второй и предпоследний символ
+        if (len >= 4) { //  минимум 4 символа 
+            if (words[i][1] == words[i][len - 2]) { 
                 cout << words[i] << " ";
                 coun++;
             }
         }
     }
-    cout << endl << "Количество таких слов: " << coun << endl;
+    cout << endl;
+    cout << "Количество таких слов: " << coun << endl;
     
     // Найти самую длинную общую подстроку 
-    if (wordc >= 2) {
+    if (wordc >= 2) { 
         char longpodstr[50] = "";
         int mapoddlin = 0;
         char w1[50], w2[50];
