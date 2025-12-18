@@ -129,4 +129,18 @@ public class Library {
     public void printOperationLog() {
         operationLog.printLog();
     }
+
+    public String getStatistics() {
+        int total = books.size();
+        int available = 0;
+        for (Book book : books) {
+            if (book.isAvailable()) {
+                available++;
+            }
+        }
+        int borrowed = total - available;
+        
+        return String.format("Всего книг: %d, Доступно: %d, Выдано: %d", 
+                            total, available, borrowed);
+    }
 }
