@@ -155,4 +155,14 @@ public class Library {
         }
         return false;
     }
+    
+    public boolean updateBook(int id, Book newData) {
+        Book book = findBookById(id);
+        if (book != null) {
+            operationLog.addEntry(OperationLog.OperationType.ADD_BOOK,
+                "Обновлена книга ID: " + id);
+            return true;
+        }
+        return false;
+    }
 }
