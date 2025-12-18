@@ -143,4 +143,16 @@ public class Library {
         return String.format("Всего книг: %d, Доступно: %d, Выдано: %d", 
                             total, available, borrowed);
     }
+
+        
+    public boolean removeBook(int id) {
+        Book book = findBookById(id);
+        if (book != null) {
+            books.remove(book);
+            operationLog.addEntry(OperationLog.OperationType.ADD_BOOK,
+                "Удалена книга ID: " + id + " - " + book.getTitle());
+            return true;
+        }
+        return false;
+    }
 }
