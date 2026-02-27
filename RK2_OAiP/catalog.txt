@@ -1,7 +1,0 @@
-String;Guitar;Wood;500;6-Standard;Alice|Bob
-String;Violin;Wood;700;4-Classic;Charlie
-Brass;Trumpet;Brass;1200;Yellow-120;Dave
-Brass;Trombone;Brass;1500;Red-150;Eve
-String;Bass;Wood;600;4-Fingerstyle;Frank
-Brass;FrenchHorn;Brass;1800;Yellow-160;Grace|Heidi
-Brass;Tuba;Brass;2000;Red-180;Ivan
