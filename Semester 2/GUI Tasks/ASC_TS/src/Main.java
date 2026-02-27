@@ -8,7 +8,7 @@ public class Main {
         System.out.println("   АЗС СИМУЛЯЦИЯ ");
         System.out.println("=================================================\n");
 
-        // Запуск с 3 колонками для наглядной демонстрации дефицитов и очередей
+        
         Config.INITIAL_PUMPS = 3;
         
         Car.resetIdCounter();
@@ -17,10 +17,7 @@ public class Main {
         Simulation sim = new Simulation();
         Statistics stats = sim.run();
 
-        System.out.println("\n--- ИТОГИ СИМУЛЯЦИИ ---");
-        stats.printShortReport(Config.INITIAL_PUMPS);
 
-        System.out.println("\nОткрытие графиков");
         ChartGenerator.showCharts(stats);
     }
 }
